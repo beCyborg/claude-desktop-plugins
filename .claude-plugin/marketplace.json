@@ -5,7 +5,7 @@
     "name": "Be Cyborg",
     "url": "https://github.com/beCyborg"
   },
-  "description": "Управление живым Chrome (Playwright MCP Extension Mode) и рабочим столом macOS (computer-use) с токен-дисциплиной: скиллы, которые не сжигают контекст на снапшотах и скриншотах.",
+  "description": "Управление живым Chrome (Playwright MCP Extension Mode) и рабочим столом macOS (computer-use) с дисциплиной расхода токенов: скиллы, которые не сжигают контекст на снапшотах и скриншотах.",
   "plugins": [
     {
       "name": "browser",

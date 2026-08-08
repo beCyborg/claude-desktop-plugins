@@ -25,7 +25,7 @@ claude plugin install browser@becyborg-desktop
 claude plugin install computer-use@becyborg-desktop
 ```
 
-Полный HTTPS-URL и `CLAUDE_CODE_PLUGIN_PREFER_HTTPS=1` — защита от клона по SSH: shorthand `owner/repo` уходит на SSH, а SSH-ключа на GitHub у нового пользователя обычно нет.
+Полный HTTPS-URL и `CLAUDE_CODE_PLUGIN_PREFER_HTTPS=1` — защита от клона по SSH: shorthand `owner/repo` уходит на SSH, а SSH-ключа на GitHub у нового пользователя обычно нет. `becyborg-desktop` — имя маркетплейса, который добавляет первая команда; в командах 2–3 подставляется именно оно.
 
 Дальше по README плагинов:
 
@@ -39,6 +39,8 @@ claude plugin install computer-use@becyborg-desktop
 - **browser**: «покажи вкладки браузера» → Claude возвращает список открытых вкладок.
 - **computer-use**: «сделай скриншот рабочего стола» → Claude запрашивает доступ и описывает экран.
 
+Если computer-use не появился в списке `/mcp` — сверьте prerequisites (macOS, план Pro или Max). Если скриншот падает — выдайте оба macOS-разрешения: Системные настройки → Конфиденциальность и безопасность → Accessibility и Screen Recording.
+
 ## Безопасность
 
 - Оба плагина дают Claude **ваши реальные привилегии** — браузер под вашими логинами, рабочий стол под вашей учёткой. Скиллы требуют явного подтверждения перед необратимыми действиями (отправка, покупка, удаление).
@@ -47,7 +49,7 @@ claude plugin install computer-use@becyborg-desktop
 
 ## Версии
 
-`version` в манифестах не задан — версией служит commit SHA. Каждый пуш доезжает до пользователей без ручного бампа.
+`version` в манифестах не задан — версией служит commit SHA. Каждый пуш доезжает сам при авто-обновлении плагинов или по команде `claude plugin update` — ручные бампы версий не нужны.
 
 Имена маркетплейса и плагинов зафиксированы с первого релиза: переименование ломает существующие установки.
 
