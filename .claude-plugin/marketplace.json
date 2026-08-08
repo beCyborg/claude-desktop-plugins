@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "becyborg-desktop",
+  "owner": {
+    "name": "Be Cyborg",
+    "url": "https://github.com/beCyborg"
+  },
+  "description": "Управление живым Chrome (Playwright MCP Extension Mode) и рабочим столом macOS (computer-use) с токен-дисциплиной: скиллы, которые не сжигают контекст на снапшотах и скриншотах.",
+  "plugins": [
+    {
+      "name": "browser",
+      "source": "./plugins/browser",
+      "category": "productivity",
+      "tags": [
+        "browser",
+        "playwright",
+        "chrome",
+        "automation"
+      ],
+      "description": "Залогиненный Chrome через Playwright MCP Extension Mode: куки, сессии, 2FA на месте. Скилл с лестницей чтения find → evaluate → scoped snapshot (~27K токенов на задачу вместо ~114K с авто-снапшотами)."
+    },
+    {
+      "name": "computer-use",
+      "source": "./plugins/computer-use",
+      "category": "productivity",
+      "tags": [
+        "computer-use",
+        "macos",
+        "desktop",
+        "automation"
+      ],
+      "description": "Дисциплина работы со встроенным computer-use MCP (macOS): экономия скриншотов (~1–1.8K токенов/кадр), computer_batch, валидные сигнатуры инструментов."
+    }
+  ],
+  "renames": {}
+}

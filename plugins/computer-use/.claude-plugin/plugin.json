@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "computer-use",
+  "displayName": "Computer Use — рабочий стол macOS с токен-дисциплиной",
+  "description": "Скилл-дисциплина для встроенного computer-use MCP: экономия скриншотов (~1–1.8K токенов/кадр), computer_batch, валидные сигнатуры инструментов, иерархия поверхностей.",
+  "author": { "name": "Be Cyborg" },
+  "homepage": "https://github.com/beCyborg/claude-desktop-plugins",
+  "repository": "https://github.com/beCyborg/claude-desktop-plugins",
+  "license": "MIT",
+  "keywords": ["computer-use", "macos", "desktop", "automation", "screenshot"]
+}
