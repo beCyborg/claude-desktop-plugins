@@ -20,12 +20,12 @@
 ## Установка
 
 ```bash
-CLAUDE_CODE_PLUGIN_PREFER_HTTPS=1 claude plugin marketplace add https://github.com/beCyborg/claude-desktop-plugins.git
+claude plugin marketplace add https://github.com/beCyborg/claude-desktop-plugins
 claude plugin install browser@becyborg-desktop
 claude plugin install computer-use@becyborg-desktop
 ```
 
-Полный HTTPS-URL и `CLAUDE_CODE_PLUGIN_PREFER_HTTPS=1` — защита от клона по SSH: shorthand `owner/repo` уходит на SSH, а SSH-ключа на GitHub у нового пользователя обычно нет. `becyborg-desktop` — имя маркетплейса, который добавляет первая команда; в командах 2–3 подставляется именно оно.
+Полный HTTPS-URL — защита от клона по SSH: shorthand `owner/repo` уходит на SSH, а SSH-ключа на GitHub у нового пользователя обычно нет. Переменная `CLAUDE_CODE_PLUGIN_PREFER_HTTPS=1` нужна только для shorthand-формы; при полном HTTPS-URL она не требуется. `becyborg-desktop` — имя маркетплейса, который добавляет первая команда; в командах 2–3 подставляется именно оно.
 
 Дальше по README плагинов:
 
@@ -47,9 +47,18 @@ claude plugin install computer-use@becyborg-desktop
 - `browser_run_code_unsafe` (произвольный JS) — под гейтом: только доверенные страницы, по явной необходимости.
 - Токен расширения — сенситивное поле `userConfig`: уезжает в Связку ключей macOS, в файлы конфига и в репозиторий не попадает.
 
-## Версии
+## Версии и обновление
 
-`version` в манифестах не задан — версией служит commit SHA. Каждый пуш доезжает сам при авто-обновлении плагинов или по команде `claude plugin update` — ручные бампы версий не нужны.
+У каждого плагина в `plugin.json` задан явный semver — он же ключ кэша обновлений. Пуш без бампа версии до получателей не доезжает.
+
+У сторонних маркетплейсов (всех, кроме официальных от Anthropic) авто-обновление у получателей **выключено по умолчанию**. Чтобы получить новую версию:
+
+```bash
+claude plugin update browser@becyborg-desktop
+claude plugin update computer-use@becyborg-desktop
+```
+
+Либо один раз включить авто-обновление: `/plugin` → Marketplaces → `becyborg-desktop`.
 
 Имена маркетплейса и плагинов зафиксированы с первого релиза: переименование ломает существующие установки.
 
